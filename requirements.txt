@@ -1,0 +1,6 @@
+flask
+azure-storage-blob
+numpy
+gunicorn
+azure-cosmos
+pytz
