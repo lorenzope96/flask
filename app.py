@@ -226,6 +226,8 @@ def download():
                             elif minuti>=50 and minuti <60:
                                 ore17_60.append(algoritmo(noise,rssi))
                     except TypeError as e:
+                            print(noise)
+                            print(rssi)
                             print(e)                  
             #calcolo il vettore finale
             if len(ore8_10) !=0:
@@ -581,7 +583,7 @@ def istant():
 def algoritmo(noiseAlgoritmo, rssiAlgoritmo):    #in assenza di ostacoli
     corpoFunzioneDistanza = (-70-rssiAlgoritmo)/40
     distanza = pow(10,corpoFunzioneDistanza)
-    risultato= noiseAlgoritmo-10*np.log10(4*np.pi*distanza)
+    risultato= noiseAlgoritmo-10*np.log10(4*np.pi*(distanza**2))
     return risultato
              
 
